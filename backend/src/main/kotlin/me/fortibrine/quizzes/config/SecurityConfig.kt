@@ -28,6 +28,7 @@ class SecurityConfig (
         http.authorizeHttpRequests { request ->
             request
                 .requestMatchers("/api/auth/**").permitAll()
+                .requestMatchers("/api/quizzes/**").permitAll()
                 .requestMatchers("/api/**").authenticated()
                 .anyRequest().permitAll()
         }

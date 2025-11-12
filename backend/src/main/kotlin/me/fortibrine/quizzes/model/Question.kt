@@ -10,10 +10,10 @@ class Question (
 
     @field:Id
     @field:GeneratedValue(strategy = GenerationType.AUTO)
-    var id: Long,
+    var id: Long? = null,
 
-    var description: String = "",
-    var options: List<String> = listOf(),
-    var answer: Int = 0
+    var description: String,
+    var options: List<String>,
+    var answer: Int
 
 )
