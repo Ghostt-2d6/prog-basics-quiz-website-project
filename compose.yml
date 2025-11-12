@@ -4,7 +4,6 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: quizzes-backend
     ports:
       - "8080:8080"
     restart: unless-stopped
@@ -20,3 +19,14 @@ services:
       JAVA_OPTS: "-Xms256m -Xmx512m"
     volumes:
       - ./backend-volume:/app
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    #environment:
+    #  NUXT_PUBLIC_API_URL: "http://localhost:8080/api"
+    depends_on:
+      - backend
+    restart: unless-stopped
