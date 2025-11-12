@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@primevue/nuxt-module": "^4.4.1",
-    "@tailwindcss/vite": "^4.1.17"
+    "@tailwindcss/vite": "^4.1.17",
+    "@types/node": "^24.10.1"
   }
 }
