@@ -1,0 +1,22 @@
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: quizzes-backend
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    environment:
+      POSTGRESQL_URL: jdbc:postgresql://db:5432/quizzes
+      POSTGRESQL_USERNAME: quizzes_user
+      POSTGRESQL_PASSWORD: quizzes_pass
+
+      # 🔐 JWT token (секрет)
+      JWT_TOKEN: "super_secret_jwt_token"
+
+      # ⚙️ JVM tuning
+      JAVA_OPTS: "-Xms256m -Xmx512m"
+    volumes:
+      - ./backend-volume:/app
