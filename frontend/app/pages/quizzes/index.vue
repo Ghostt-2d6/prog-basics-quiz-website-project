@@ -15,19 +15,7 @@
 </template>
 
 <script setup lang="ts">
-interface Question {
-  id: number
-  description: string
-  options: string[]
-  answer: number
-}
-
-interface Quiz {
-  id: number
-  title: string
-  description: string
-  questions: Question[]
-}
+import type {Quiz} from "~/api/quizzesApi";
 
 const config = useRuntimeConfig()
 
