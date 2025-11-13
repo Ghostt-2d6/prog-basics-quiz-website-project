@@ -17,8 +17,6 @@ services:
 
       # ⚙️ JVM tuning
       JAVA_OPTS: "-Xms256m -Xmx512m"
-    volumes:
-      - ./backend-volume:/app
   frontend:
     build:
       context: ./frontend
