@@ -21,6 +21,9 @@ export default defineNuxtConfig({
         }
     },
     vite: {
+        server: {
+            allowedHosts: ["quizzes.fortibrine.me"]
+        },
         plugins: [
             tailwindcss(),
         ],

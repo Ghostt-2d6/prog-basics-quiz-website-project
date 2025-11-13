@@ -65,7 +65,8 @@ class SecurityConfig (
 
         configuration.allowedOrigins = listOf(
             "http://localhost:3000",  // Dev
-            "http://0.0.0.0:3000"
+            "http://0.0.0.0:3000",
+            "https://quizzes.fortibrine.me/"
         )
 
         configuration.allowedMethods = listOf("GET", "POST", "PUT", "DELETE", "OPTIONS")
