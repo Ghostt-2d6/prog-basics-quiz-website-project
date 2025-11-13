@@ -1,14 +1,12 @@
 <template>
   <div>
-    <p>123 hello world</p>
-    <Button label="Submit" />
+
   </div>
 </template>
 
 <script setup lang="ts">
+import {useQuizStore} from "~/stores/quizStore";
 
+const store = useQuizStore();
+store.deleteCurrentQuestionId();
 </script>
-
-<style scoped>
-
-</style>

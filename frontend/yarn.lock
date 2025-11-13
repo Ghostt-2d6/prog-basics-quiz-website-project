@@ -1502,6 +1502,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@pinia/nuxt@npm:^0.11.3":
+  version: 0.11.3
+  resolution: "@pinia/nuxt@npm:0.11.3"
+  dependencies:
+    "@nuxt/kit": ^4.2.0
+  peerDependencies:
+    pinia: ^3.0.4
+  checksum: 2a960535735ddc2ad3a13d94eba17a7e2294350b3aae3d36548dd5ce6070bfd85214bc475e43303d192fc10d21cd7588b496dec3196807fa728be7a43ca0cdeb
+  languageName: node
+  linkType: hard
+
 "@pkgjs/parseargs@npm:^0.11.0":
   version: 0.11.0
   resolution: "@pkgjs/parseargs@npm:0.11.0"
@@ -2368,6 +2379,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vue/devtools-api@npm:^7.7.7":
+  version: 7.7.8
+  resolution: "@vue/devtools-api@npm:7.7.8"
+  dependencies:
+    "@vue/devtools-kit": ^7.7.8
+  checksum: 262313c74bac3e211a6cc1547bf621222f0ab543e7d94179b6e6e80195ab87ca7c4361f1cc02f8e3f53a529107951cca21df88093b4f7e8a2b15e92c981c25f4
+  languageName: node
+  linkType: hard
+
 "@vue/devtools-core@npm:^8.0.3":
   version: 8.0.3
   resolution: "@vue/devtools-core@npm:8.0.3"
@@ -2384,6 +2404,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vue/devtools-kit@npm:^7.7.8":
+  version: 7.7.8
+  resolution: "@vue/devtools-kit@npm:7.7.8"
+  dependencies:
+    "@vue/devtools-shared": ^7.7.8
+    birpc: ^2.3.0
+    hookable: ^5.5.3
+    mitt: ^3.0.1
+    perfect-debounce: ^1.0.0
+    speakingurl: ^14.0.1
+    superjson: ^2.2.2
+  checksum: be5965f1f70502d39964de0c3d708f2cdeadeed4c6d1632df1c64c0d17bac2f638fe9292c9b4f0b8433e1677f4296f069f5f3515c6462571edd357ff133907ca
+  languageName: node
+  linkType: hard
+
 "@vue/devtools-kit@npm:^8.0.3":
   version: 8.0.3
   resolution: "@vue/devtools-kit@npm:8.0.3"
@@ -2396,6 +2431,15 @@ __metadata:
     speakingurl: ^14.0.1
     superjson: ^2.2.2
   checksum: 9d0c3b99ed29c5eb4c8422c803b95c35cadcde971154b4a1aefc193179f3ec5fd9aeeb2a26b95fc7efef5077dc6a62197bc76a5afdef74ab47aac3e4f93c692c
+  languageName: node
+  linkType: hard
+
+"@vue/devtools-shared@npm:^7.7.8":
+  version: 7.7.8
+  resolution: "@vue/devtools-shared@npm:7.7.8"
+  dependencies:
+    rfdc: ^1.4.1
+  checksum: d7d55d59bcc65a4479f855f8b688d1c2a7e43d2905dae3fb9594bf78fe44d0b01749cc71f2eff3ee0f99fedef786eed426c8e10599415b40d8054aa6c5e0f07c
   languageName: node
   linkType: hard
 
@@ -2725,7 +2769,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"birpc@npm:^2.4.0, birpc@npm:^2.6.1, birpc@npm:^2.7.0":
+"birpc@npm:^2.3.0, birpc@npm:^2.4.0, birpc@npm:^2.6.1, birpc@npm:^2.7.0":
   version: 2.8.0
   resolution: "birpc@npm:2.8.0"
   checksum: f2b342fcd5d01a8a2d19e2890b6ef239f21bea389b440775da161cd624e9b8d72117a9c5767bea827234572ffac72b1a2d5064e0166349fddd9db03b45f6ef49
@@ -5314,11 +5358,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nuxt-app@workspace:."
   dependencies:
+    "@pinia/nuxt": ^0.11.3
     "@primeuix/themes": ^1.2.5
     "@primevue/nuxt-module": ^4.4.1
     "@tailwindcss/vite": ^4.1.17
     "@types/node": ^24.10.1
     nuxt: ^4.2.1
+    pinia: ^3.0.4
     primevue: ^4.4.1
     tailwindcss: ^4.1.17
     vue: ^3.5.24
@@ -5773,6 +5819,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"perfect-debounce@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "perfect-debounce@npm:1.0.0"
+  checksum: 220343acf52976947958fef3599849471605316e924fe19c633ae2772576298e9d38f02cefa8db46f06607505ce7b232cbb35c9bfd477bd0329bd0a2ce37c594
+  languageName: node
+  linkType: hard
+
 "perfect-debounce@npm:^2.0.0":
   version: 2.0.0
   resolution: "perfect-debounce@npm:2.0.0"
@@ -5798,6 +5851,21 @@ __metadata:
   version: 4.0.3
   resolution: "picomatch@npm:4.0.3"
   checksum: 6817fb74eb745a71445debe1029768de55fd59a42b75606f478ee1d0dc1aa6e78b711d041a7c9d5550e042642029b7f373dc1a43b224c4b7f12d23436735dba0
+  languageName: node
+  linkType: hard
+
+"pinia@npm:^3.0.4":
+  version: 3.0.4
+  resolution: "pinia@npm:3.0.4"
+  dependencies:
+    "@vue/devtools-api": ^7.7.7
+  peerDependencies:
+    typescript: ">=4.5.0"
+    vue: ^3.5.11
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: f556836913af99bb95ee2faf9a97ea613558b30e6eee47320a3ba205cce732c93ec0ab867cf052538371c7d4b779275a74306695d658f0f1e31ff8edc1a665e2
   languageName: node
   linkType: hard
 

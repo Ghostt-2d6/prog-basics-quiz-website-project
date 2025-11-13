@@ -1,6 +1,6 @@
 <template>
-  <div v-if="data" class="flex flex-row m-10 gap-3">
-    <div v-for="quiz in data" :key="quiz.id">
+  <div v-if="quizzes" class="flex flex-row flex-wrap m-10 gap-3">
+    <div v-for="quiz in quizzes" :key="quiz.id">
       <Card style="width: 25rem; overflow: hidden">
         <template #title>{{ quiz.title }}</template>
         <template #subtitle>{{ quiz.description }}</template>
@@ -16,10 +16,14 @@
 
 <script setup lang="ts">
 import type {Quiz} from "~/api/quizzesApi";
+import {useQuizStore} from "~/stores/quizStore";
 
-const config = useRuntimeConfig()
+const config = useRuntimeConfig();
+const store = useQuizStore();
+store.deleteCurrentQuestionId();
 
-const { data } = await useFetch<Quiz[]>(`${config.public.apiBase}/quizzes`)
+const { data: quizzes } = await useFetch<Quiz[]>(`${config.public.apiBase}/quizzes`);
+
 const navigateToQuiz = (id: number) => {
   navigateTo("/quizzes/" + id);
 };

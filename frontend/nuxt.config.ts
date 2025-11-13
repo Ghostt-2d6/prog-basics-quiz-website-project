@@ -7,7 +7,8 @@ export default defineNuxtConfig({
     compatibilityDate: '2025-07-15',
     devtools: { enabled: true },
     modules: [
-        '@primevue/nuxt-module'
+        '@primevue/nuxt-module',
+        '@pinia/nuxt',
     ],
     primevue: {
         options: {
