@@ -1,12 +1,12 @@
 <template>
   <div v-if="quizzes" class="flex flex-row flex-wrap m-10 gap-3">
-    <div v-for="quiz in quizzes" :key="quiz.id">
+    <div v-for="quiz in quizzes" :key="quiz._id">
       <Card style="width: 25rem; overflow: hidden">
         <template #title>{{ quiz.title }}</template>
         <template #subtitle>{{ quiz.description }}</template>
         <template #footer>
           <div class="flex gap-4 mt-1">
-            <Button label="Пройти" class="w-full" @click.prevent="() => navigateToQuiz(quiz.id)" />
+            <Button label="Пройти" class="w-full" @click.prevent="() => navigateToQuiz(quiz._id)" />
           </div>
         </template>
       </Card>
@@ -18,13 +18,12 @@
 import type {Quiz} from "~/api/quizzesApi";
 import {useQuizStore} from "~/stores/quizStore";
 
-const config = useRuntimeConfig();
 const store = useQuizStore();
-store.deleteCurrentQuestionId();
+store.deleteCurrentQuizId();
 
-const { data: quizzes } = await useFetch<Quiz[]>(`${config.public.apiBase}/quizzes`);
+const { data: quizzes } = await useFetch<Quiz[]>(`/api/quizzes`);
 
-const navigateToQuiz = (id: number) => {
+const navigateToQuiz = (id: string) => {
   navigateTo("/quizzes/" + id);
 };
 

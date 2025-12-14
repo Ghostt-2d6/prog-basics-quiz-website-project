@@ -2,21 +2,21 @@ import { defineStore } from 'pinia';
 
 export const useQuizStore = defineStore('quiz', {
     state: () => ({
-        answers: {} as { [questionId: number]: number | null },
-        currentQuestionId: null as string | null
+        answers: {} as Record<string, number>,
+        currentQuizId: null as string | null
     }),
 
     actions: {
-        setAnswer(questionId: number, answer: number) {
+        setAnswer(questionId: string, answer: number) {
             this.answers[questionId] = answer;
         },
 
-        setCurrentQuestionId(questionId: string) {
-            this.currentQuestionId = questionId;
+        setCurrentQuizId(quizId: string) {
+            this.currentQuizId = quizId;
         },
 
-        deleteCurrentQuestionId() {
-            this.currentQuestionId = null;
+        deleteCurrentQuizId() {
+            this.currentQuizId = null;
         },
 
         clear() {
@@ -25,8 +25,8 @@ export const useQuizStore = defineStore('quiz', {
     },
 
     getters: {
-        hasCurrentQuestionId: (state) => {
-            return state.currentQuestionId !== null;
+        hasCurrentQuizId: (state) => {
+            return state.currentQuizId !== null;
         }
     }
 });

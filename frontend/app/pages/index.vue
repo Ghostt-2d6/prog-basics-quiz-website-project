@@ -8,5 +8,5 @@
 import {useQuizStore} from "~/stores/quizStore";
 
 const store = useQuizStore();
-store.deleteCurrentQuestionId();
+store.deleteCurrentQuizId();
 </script>

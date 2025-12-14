@@ -1,12 +1,12 @@
 export interface Question {
-    id: number
+    _id: string
     description: string
     options: string[]
     answer: number
 }
 
 export interface Quiz {
-    id: number
+    _id: string
     title: string
     description: string
     questions: Question[]

@@ -4,15 +4,15 @@
       Результати ({{ result }} / {{ quiz.questions.length }})
     </h1>
 
-    <div v-for="question in quiz.questions" :key="question.id"
+    <div v-for="question in quiz.questions" :key="question._id"
          class="p-4 border mb-3">
       <p class="font-semibold">{{ question.description }}</p>
 
       <p>
         Ваша відповідь:
         <strong>
-          <template v-if="question.id in store.answers">
-            {{ question.options[store.answers[question.id]!] }}
+          <template v-if="question._id in store.answers">
+            {{ question.options[store.answers[question._id]!] }}
           </template>
           <template v-else>-</template>
 
@@ -26,7 +26,7 @@
         </strong>
       </p>
 
-      <p v-if="store.answers[question.id] === question.answer">
+      <p v-if="store.answers[question._id] === question.answer">
         ✔ Правильно
       </p>
 
@@ -43,17 +43,16 @@ import type { Quiz } from '~/api/quizzesApi';
 
 const store = useQuizStore();
 const params = useRoute().params;
-const config = useRuntimeConfig();
 
 const { data: quiz, error } = await useFetch<Quiz>(
-    `${config.public.apiBase}/quizzes/${params.id}`
+    `/api/quizzes/${params.id}`
 );
 
 if (typeof params.id !== 'string') {
   navigateTo("/quizzes");
 }
 
-if (!store.hasCurrentQuestionId || store.currentQuestionId !== params.id) {
+if (!store.hasCurrentQuizId || store.currentQuizId !== params.id) {
   navigateTo("/quizzes");
 }
 
@@ -65,7 +64,7 @@ const result = computed(() => {
   if (!quiz.value) return 0;
 
   return quiz.value!.questions.reduce((acc, q) => {
-    return acc + (store.answers[q.id] === q.answer ? 1 : 0);
+    return acc + (store.answers[q._id] === q.answer ? 1 : 0);
   }, 0);
 });
 

@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     devtools: { enabled: true },
     modules: [
         '@primevue/nuxt-module',
-        '@pinia/nuxt',
+        '@pinia/nuxt'
     ],
     primevue: {
         options: {
@@ -27,10 +27,5 @@ export default defineNuxtConfig({
         plugins: [
             tailwindcss(),
         ],
-    },
-    runtimeConfig: {
-        public: {
-            apiBase: process.env.API_BASE_URL || 'http://localhost:8080/api'
-        }
     }
 })

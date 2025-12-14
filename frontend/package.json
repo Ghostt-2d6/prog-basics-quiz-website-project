@@ -12,6 +12,7 @@
   "dependencies": {
     "@pinia/nuxt": "^0.11.3",
     "@primeuix/themes": "^1.2.5",
+    "mongoose": "^9.0.1",
     "nuxt": "^4.2.1",
     "pinia": "^3.0.4",
     "primevue": "^4.4.1",
