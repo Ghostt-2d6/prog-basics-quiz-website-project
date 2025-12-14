@@ -21,5 +21,5 @@ services:
     depends_on:
       - mongo
     environment:
-      MONGO_URI: "mongodb://quizzes:password@mongo:27017/quizzes?authSource=quizzes"
+      MONGO_URI: "mongodb://quizzes:password@mongo:27017/quizzes?authSource=admin"
     restart: unless-stopped
