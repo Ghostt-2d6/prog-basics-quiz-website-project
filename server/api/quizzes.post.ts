@@ -1,8 +1,8 @@
 import { createQuiz } from '~~/server/repositories/quiz.repository'
-import type { QuizDto } from '~~/server/dto/QuizDto'
+import type {Quiz} from "#shared/types/quiz";
 
 export default defineEventHandler(async (event) => {
-    const body = await readBody<QuizDto>(event)
+    const body = await readBody<Quiz>(event)
 
     if (!body?.title || !body.questions?.length) {
         throw createError({

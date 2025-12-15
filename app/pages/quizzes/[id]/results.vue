@@ -39,7 +39,7 @@
 
 <script setup lang="ts">
 import { useQuizStore } from '~/stores/quizStore';
-import type { Quiz } from '~/api/quizzesApi';
+import type {Quiz} from "#shared/types/quiz";
 
 const store = useQuizStore();
 const params = useRoute().params;

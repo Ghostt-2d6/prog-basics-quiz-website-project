@@ -15,8 +15,8 @@
 </template>
 
 <script setup lang="ts">
-import type {Quiz} from "~/api/quizzesApi";
 import {useQuizStore} from "~/stores/quizStore";
+import type {Quiz} from "#shared/types/quiz";
 
 const store = useQuizStore();
 store.deleteCurrentQuizId();

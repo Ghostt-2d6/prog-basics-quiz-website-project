@@ -6,12 +6,19 @@
         <template #start>
           <div class="flex items-center gap-2">
             <NuxtLink to="/"><p class="font-bold">Quizzes</p></NuxtLink>
+            <NuxtLink to="/quizzes"><Button label="Тести" text plain /></NuxtLink>
+            <NuxtLink to="/about"><Button label="Про сайт" text plain /></NuxtLink>
           </div>
         </template>
         <template #end>
           <div class="flex items-center gap-2">
-            <NuxtLink to="/quizzes"><Button label="Тести" /></NuxtLink>
-            <NuxtLink to="/about"><Button label="Про сайт" /></NuxtLink>
+            <template v-if="!loggedIn">
+              <NuxtLink to="/login"><Button label="Увійти" /></NuxtLink>
+            </template>
+            <template v-else>
+              <NuxtLink to="/profile"><Button label="Профіль" /></NuxtLink>
+              <Button @click="clear" label="Вийти" />
+            </template>
           </div>
         </template>
       </Toolbar>
@@ -22,6 +29,8 @@
 </template>
 
 <script setup lang="ts">
+
+const { loggedIn, user, session, fetch, clear, openInPopup } = useUserSession();
 
 </script>
 

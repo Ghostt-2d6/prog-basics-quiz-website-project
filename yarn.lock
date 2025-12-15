@@ -5,6 +5,24 @@ __metadata:
   version: 6
   cacheKey: 8
 
+"@adonisjs/hash@npm:^9.1.1":
+  version: 9.1.1
+  resolution: "@adonisjs/hash@npm:9.1.1"
+  dependencies:
+    "@phc/format": ^1.0.0
+    "@poppinss/utils": ^6.9.3
+  peerDependencies:
+    argon2: ^0.31.2 || ^0.41.0 || ^0.43.0
+    bcrypt: ^5.1.1 || ^6.0.0
+  peerDependenciesMeta:
+    argon2:
+      optional: true
+    bcrypt:
+      optional: true
+  checksum: 85e2b1333b93770683dbcdd35605e27add62d52faebf8dfa70b6dfd3f3d3cd417bf05e8b6f5c7f0aa84f2319e2521891dd30ad67ad3c631fada04c0cb0d5efc6
+  languageName: node
+  linkType: hard
+
 "@babel/code-frame@npm:^7.27.1":
   version: 7.27.1
   resolution: "@babel/code-frame@npm:7.27.1"
@@ -1511,6 +1529,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@phc/format@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@phc/format@npm:1.0.0"
+  checksum: 15ee02504fbc16590923d89b1f1c2f5892df27cf2bf19180e5678511413e87b6e5355815a092749cd01698855ee5a0fc5d2393951c727acd650934eed290e26e
+  languageName: node
+  linkType: hard
+
 "@pinia/nuxt@npm:^0.11.3":
   version: 0.11.3
   resolution: "@pinia/nuxt@npm:0.11.3"
@@ -1556,10 +1581,50 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@poppinss/exception@npm:^1.2.1":
+  version: 1.2.3
+  resolution: "@poppinss/exception@npm:1.2.3"
+  checksum: 414a536a8666b2cb6c8ae5460c107e58de4ce2ac5cae42d2a5ec432119f415bf8b6780703e8f6d34faf36b433c47f2bb821cc48f3d1d5f14ab22b0e36e4175a1
+  languageName: node
+  linkType: hard
+
 "@poppinss/exception@npm:^1.2.2":
   version: 1.2.2
   resolution: "@poppinss/exception@npm:1.2.2"
   checksum: 16744b580063c82ba4f0f3a50e0180ebb213f01d629368e750fc15e8353dd39a49be9c9e465e727a12ebdc5ca0c3c7d58d6c6fbd8ebbde4449987546cecc85d0
+  languageName: node
+  linkType: hard
+
+"@poppinss/object-builder@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@poppinss/object-builder@npm:1.1.0"
+  checksum: fa05bd21b9c30cab08e75e4acf851994b1d4e1b9913c171be9010bb353a75ea03fe86238976eb01c5af17c2eec65a0d79b805bc8f76c2b54326a8bd6aa1f4478
+  languageName: node
+  linkType: hard
+
+"@poppinss/string@npm:^1.3.0":
+  version: 1.7.1
+  resolution: "@poppinss/string@npm:1.7.1"
+  dependencies:
+    "@types/pluralize": ^0.0.33
+    case-anything: ^3.1.2
+    pluralize: ^8.0.0
+    slugify: ^1.6.6
+  checksum: b4cd351f5d32a51b9f89a206fbb4bad98f361cbf4aca9ef0c0ee1c307b42e97e6c377a2c3f77b2a329b1ebc7df860295aa33262ee907b4695374a3243cd63b6d
+  languageName: node
+  linkType: hard
+
+"@poppinss/utils@npm:^6.9.3":
+  version: 6.10.1
+  resolution: "@poppinss/utils@npm:6.10.1"
+  dependencies:
+    "@poppinss/exception": ^1.2.1
+    "@poppinss/object-builder": ^1.1.0
+    "@poppinss/string": ^1.3.0
+    flattie: ^1.1.1
+    safe-stable-stringify: ^2.5.0
+    secure-json-parse: ^4.0.0
+  checksum: d6693f0cc5a1479badf77386519f6403340230152c57dc2d5942206062adc1921f9eaa51673ce37a931d58b5df482aacef7bd3bf8642a86db1d40f85784b0332
   languageName: node
   linkType: hard
 
@@ -2181,6 +2246,13 @@ __metadata:
   version: 7.0.3
   resolution: "@types/parse-path@npm:7.0.3"
   checksum: 21a12c228d38f5a75659dfd7cb127dc2001ed3f6acbd1b2e0575d1348c735594c0bab06a97fe849c151438384829f20ea5971cb045f7ecd37d53c76a9fcb9de3
+  languageName: node
+  linkType: hard
+
+"@types/pluralize@npm:^0.0.33":
+  version: 0.0.33
+  resolution: "@types/pluralize@npm:0.0.33"
+  checksum: 282d42dc0187e5e0912f9f36ee0f5615bfd273a08d40afe5bf5881cb28daf1977abe10564543032aa0f42352ebba739ff3d86bf5562ac4691c6d1761fcc7cf39
   languageName: node
   linkType: hard
 
@@ -2948,6 +3020,13 @@ __metadata:
   version: 1.0.30001754
   resolution: "caniuse-lite@npm:1.0.30001754"
   checksum: f5a956d820c6a4de16d0c22eb6bbbbaec346f502f324523311bbbfe4dd8ed0d69ae6034dd96a2f901156f3e4571606670be01f74c8234ac56ea7820383b6aca0
+  languageName: node
+  linkType: hard
+
+"case-anything@npm:^3.1.2":
+  version: 3.1.2
+  resolution: "case-anything@npm:3.1.2"
+  checksum: 585f91108cc7b361016d1191f7c369f326d9e845d5e58aa9fd89927d26452587b794098caa5de6a311a70e9547df0692c83abe5a1c8850fd693c6c54cfcce08a
   languageName: node
   linkType: hard
 
@@ -3893,6 +3972,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"flattie@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "flattie@npm:1.1.1"
+  checksum: dd78a052307fe11c90a4b565aa3d6dc12718d948a172a9dd6b6c847a9e1f47c3353b65d8894dda016cb224ec4b9b2005ac0f1087786fec2c92fcf8f2caf1dd31
+  languageName: node
+  linkType: hard
+
 "foreground-child@npm:^3.1.0, foreground-child@npm:^3.3.1":
   version: 3.3.1
   resolution: "foreground-child@npm:3.3.1"
@@ -4516,6 +4602,13 @@ __metadata:
   bin:
     jiti: lib/jiti-cli.mjs
   checksum: 9394e29c5e40d1ca8267923160d8d86706173c9ff30c901097883434b0c4866de2c060427b6a9a5843bb3e42fa3a3c8b5b2228531d3dd4f4f10c5c6af355bb86
+  languageName: node
+  linkType: hard
+
+"jose@npm:^6.1.0, jose@npm:^6.1.3":
+  version: 6.1.3
+  resolution: "jose@npm:6.1.3"
+  checksum: 7f51c7e77f82b70ef88ede9fd1760298bc0ffbf143b9d94f78c08462987ae61864535c1856bc6c26d335f857c7d41f4fffcc29134212c19ea929ce34a4c790f0
   languageName: node
   linkType: hard
 
@@ -5483,6 +5576,7 @@ __metadata:
     "@types/node": ^24.10.1
     mongoose: ^9.0.1
     nuxt: ^4.2.1
+    nuxt-auth-utils: ^0.5.26
     pinia: ^3.0.4
     primevue: ^4.4.1
     tailwindcss: ^4.1.17
@@ -5490,6 +5584,39 @@ __metadata:
     vue-router: ^4.6.3
   languageName: unknown
   linkType: soft
+
+"nuxt-auth-utils@npm:^0.5.26":
+  version: 0.5.26
+  resolution: "nuxt-auth-utils@npm:0.5.26"
+  dependencies:
+    "@adonisjs/hash": ^9.1.1
+    "@nuxt/kit": ^4.2.1
+    defu: ^6.1.4
+    h3: ^1.15.4
+    hookable: ^5.5.3
+    jose: ^6.1.3
+    ofetch: ^1.5.1
+    openid-client: ^6.8.1
+    pathe: ^2.0.3
+    scule: ^1.3.0
+    uncrypto: ^0.1.3
+  peerDependencies:
+    "@atproto/api": ^0.13.15
+    "@atproto/oauth-client-node": ^0.2.0
+    "@simplewebauthn/browser": ^11.0.0
+    "@simplewebauthn/server": ^11.0.0
+  peerDependenciesMeta:
+    "@atproto/api":
+      optional: true
+    "@atproto/oauth-client-node":
+      optional: true
+    "@simplewebauthn/browser":
+      optional: true
+    "@simplewebauthn/server":
+      optional: true
+  checksum: a4f46be90b025e1d3fbb4f3d5e0a279032d59aeef1358f7f9cf66e0eadf762a15dcafa749c8360ed6de8ff2e7b64f69d38ecc2bf83bd26fd96c06f8659f31c06
+  languageName: node
+  linkType: hard
 
 "nuxt@npm:^4.2.1":
   version: 4.2.1
@@ -5582,6 +5709,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"oauth4webapi@npm:^3.8.2":
+  version: 3.8.3
+  resolution: "oauth4webapi@npm:3.8.3"
+  checksum: 66d5c8215aff90280339911061534c183c8cf645cad1870d8d41810888f3972b5705a7c45c564c60c5c4b79e3d5a62b401c7be59bbd7bf45509094379fad2a39
+  languageName: node
+  linkType: hard
+
 "ofetch@npm:^1.4.1, ofetch@npm:^1.5.0, ofetch@npm:^1.5.1":
   version: 1.5.1
   resolution: "ofetch@npm:1.5.1"
@@ -5645,6 +5779,16 @@ __metadata:
     is-docker: ^2.1.1
     is-wsl: ^2.2.0
   checksum: 6388bfff21b40cb9bd8f913f9130d107f2ed4724ea81a8fd29798ee322b361ca31fa2cdfb491a5c31e43a3996cfe9566741238c7a741ada8d7af1cb78d85cf26
+  languageName: node
+  linkType: hard
+
+"openid-client@npm:^6.8.1":
+  version: 6.8.1
+  resolution: "openid-client@npm:6.8.1"
+  dependencies:
+    jose: ^6.1.0
+    oauth4webapi: ^3.8.2
+  checksum: 05b2cdfe8d8e66502e42e7152b437ea2800325fa1216648e522bcef3a3ed7f8c894d8f02e362d9a3ac0da77f995a58313275199e5d0d0ea672a54d070b3f48af
   languageName: node
   linkType: hard
 
@@ -6007,6 +6151,13 @@ __metadata:
     exsolve: ^1.0.7
     pathe: ^2.0.3
   checksum: 33c30b442662a0f2b62fd16f39ae2beeb4cdf3511699e574765b7451e179937847de6e696bbab50bfbd41d2c2e4a99b61ebc7078abf91ea8573a7f16cc11d26a
+  languageName: node
+  linkType: hard
+
+"pluralize@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "pluralize@npm:8.0.0"
+  checksum: 08931d4a6a4a5561a7f94f67a31c17e6632cb21e459ab3ff4f6f629d9a822984cf8afef2311d2005fbea5d7ef26016ebb090db008e2d8bce39d0a9a9d218736e
   languageName: node
   linkType: hard
 
@@ -6746,6 +6897,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"safe-stable-stringify@npm:^2.5.0":
+  version: 2.5.0
+  resolution: "safe-stable-stringify@npm:2.5.0"
+  checksum: d3ce103ed43c6c2f523e39607208bfb1c73aa48179fc5be53c3aa97c118390bffd4d55e012f5393b982b65eb3e0ee954dd57b547930d3f242b0053dcdb923d17
+  languageName: node
+  linkType: hard
+
 "safer-buffer@npm:>= 2.1.2 < 3, safer-buffer@npm:>= 2.1.2 < 3.0.0":
   version: 2.1.2
   resolution: "safer-buffer@npm:2.1.2"
@@ -6764,6 +6922,13 @@ __metadata:
   version: 1.3.0
   resolution: "scule@npm:1.3.0"
   checksum: f2968b292e33c0eddca4a68b5c70f08dfc8479e492461c248f72873deaf77ae87c9f27dde7a342b3cb6394d2fae9665890b07a2243f79cff5cba65c9525ccf7e
+  languageName: node
+  linkType: hard
+
+"secure-json-parse@npm:^4.0.0":
+  version: 4.1.0
+  resolution: "secure-json-parse@npm:4.1.0"
+  checksum: 323a68f21999847dce0c28d57b67f7323e6066e51057fb8f521feb9829e57a1eedce389187db11966da548bf469b141f52ab9655662a229dc8c7ab34012f2328
   languageName: node
   linkType: hard
 
@@ -6918,6 +7083,13 @@ __metadata:
   version: 5.1.0
   resolution: "slash@npm:5.1.0"
   checksum: 70434b34c50eb21b741d37d455110258c42d2cf18c01e6518aeb7299f3c6e626330c889c0c552b5ca2ef54a8f5a74213ab48895f0640717cacefeef6830a1ba4
+  languageName: node
+  linkType: hard
+
+"slugify@npm:^1.6.6":
+  version: 1.6.6
+  resolution: "slugify@npm:1.6.6"
+  checksum: 04773c2d3b7aea8d2a61fa47cc7e5d29ce04e1a96cbaec409da57139df906acb3a449fac30b167d203212c806e73690abd4ff94fbad0a9a7b7ea109a2a638ae9
   languageName: node
   linkType: hard
 

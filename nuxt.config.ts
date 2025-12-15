@@ -1,5 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
-
 import Aura from '@primeuix/themes/aura';
 import tailwindcss from "@tailwindcss/vite";
 
@@ -8,7 +6,8 @@ export default defineNuxtConfig({
     devtools: { enabled: true },
     modules: [
         '@primevue/nuxt-module',
-        '@pinia/nuxt'
+        '@pinia/nuxt',
+        'nuxt-auth-utils'
     ],
     primevue: {
         options: {
