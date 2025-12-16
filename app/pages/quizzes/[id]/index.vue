@@ -15,7 +15,7 @@
           class="flex items-center gap-2"
       >
         <RadioButton
-            v-model="store.answers[question._id]"
+            v-model="answers[question._id]"
             :value="index"
         />
         <label>{{ option }}</label>
@@ -27,13 +27,12 @@
 </template>
 
 <script setup lang="ts">
-import { useQuizStore } from "~/stores/quizStore";
 import type {Quiz} from "#shared/types/quiz";
 
 const route = useRoute();
-const store = useQuizStore();
 
 const quiz = ref<Quiz | null>(null);
+const answers = ref<Record<string, number>>({});
 
 if (typeof route.params.id !== "string") {
   navigateTo("/quizzes");
@@ -43,9 +42,6 @@ if (typeof route.params.id !== "string") {
 const quizId = route.params.id;
 
 onMounted(async () => {
-  store.clear();
-  store.setCurrentQuizId(quizId);
-
   try {
     quiz.value = await $fetch<Quiz>(`/api/quizzes/${quizId}`);
   } catch (error) {
@@ -53,7 +49,19 @@ onMounted(async () => {
   }
 });
 
+const isAllAnswered = computed(() => {
+  if (!quiz.value) return false;
+  return quiz.value.questions.every(
+      q => answers.value[q._id] !== undefined
+  );
+});
+
 const toResults = () => {
-  navigateTo(`/quizzes/${quizId}/results`);
+  navigateTo({
+    path: `/quizzes/${quizId}/results`,
+    query: {
+      answers: JSON.stringify(answers.value)
+    }
+  });
 };
 </script>

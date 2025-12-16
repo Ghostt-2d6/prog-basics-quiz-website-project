@@ -11,8 +11,8 @@
       <p>
         Ваша відповідь:
         <strong>
-          <template v-if="question._id in store.answers">
-            {{ question.options[store.answers[question._id]!] }}
+          <template v-if="question._id in answers">
+            {{ question.options[answers[question._id]!] }}
           </template>
           <template v-else>-</template>
 
@@ -26,7 +26,7 @@
         </strong>
       </p>
 
-      <p v-if="store.answers[question._id] === question.answer">
+      <p v-if="answers[question._id] === question.answer">
         ✔ Правильно
       </p>
 
@@ -38,33 +38,44 @@
 </template>
 
 <script setup lang="ts">
-import { useQuizStore } from '~/stores/quizStore';
 import type {Quiz} from "#shared/types/quiz";
 
-const store = useQuizStore();
-const params = useRoute().params;
+const route = useRoute();
 
-const { data: quiz, error } = await useFetch<Quiz>(
-    `/api/quizzes/${params.id}`
-);
-
-if (typeof params.id !== 'string') {
+if (typeof route.params.id !== "string") {
   navigateTo("/quizzes");
+  throw new Error("Invalid quiz id");
 }
 
-if (!store.hasCurrentQuizId || store.currentQuizId !== params.id) {
+if (typeof route.query.answers !== "string") {
   navigateTo("/quizzes");
+  throw new Error("Invalid quiz id");
 }
 
-if (error?.value || !quiz?.value) {
-  navigateTo("/quizzes");
-}
+const answers = computed<Record<string, number>>(() => {
+  try {
+    return JSON.parse(route.query.answers as string);
+  } catch {
+    return {};
+  }
+});
+const quiz = ref<Quiz | null>(null);
+
+const quizId = route.params.id;
+
+onMounted(async () => {
+  try {
+    quiz.value = await $fetch<Quiz>(`/api/quizzes/${quizId}`);
+  } catch (error) {
+    navigateTo("/quizzes");
+  }
+});
 
 const result = computed(() => {
   if (!quiz.value) return 0;
 
   return quiz.value!.questions.reduce((acc, q) => {
-    return acc + (store.answers[q._id] === q.answer ? 1 : 0);
+    return acc + (answers.value[q._id] === q.answer ? 1 : 0);
   }, 0);
 });
 

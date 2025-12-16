@@ -26,5 +26,10 @@ export default defineNuxtConfig({
         plugins: [
             tailwindcss(),
         ],
+    },
+    routeRules: {
+        '/profile': { ssr: false },
+        '/login': { ssr: false },
+        '/quizzes/*/results': { ssr: false }
     }
 })

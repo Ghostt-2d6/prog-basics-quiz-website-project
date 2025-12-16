@@ -17,7 +17,7 @@
             </template>
             <template v-else>
               <NuxtLink to="/profile"><Button label="Профіль" /></NuxtLink>
-              <Button @click="clear" label="Вийти" />
+              <Button @click="logout" label="Вийти" />
             </template>
           </div>
         </template>
@@ -31,6 +31,11 @@
 <script setup lang="ts">
 
 const { loggedIn, user, session, fetch, clear, openInPopup } = useUserSession();
+
+const logout = async () => {
+  await clear();
+  navigateTo("/");
+};
 
 </script>
 

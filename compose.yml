@@ -20,9 +20,14 @@ services:
       - "3000:3000"
     depends_on:
       - mongo
-    environment:
-      MONGO_URI: "mongodb://quizzes:password@mongo:27017/quizzes?authSource=admin"
-      NUXT_SESSION_PASSWORD: ""
-      NUXT_OAUTH_GOOGLE_CLIENT_ID: ""
-      NUXT_OAUTH_GOOGLE_CLIENT_SECRET: ""
+    env_file:
+      - .env
     restart: unless-stopped
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    restart: unless-stopped
+    profiles:
+      - tunnel
+    depends_on:
+      - quizzes
+    command: "tunnel run --url http://quizzes:3000 --token ${TUNNEL_TOKEN}"

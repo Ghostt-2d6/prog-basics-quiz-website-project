@@ -15,13 +15,17 @@
 </template>
 
 <script setup lang="ts">
-import {useQuizStore} from "~/stores/quizStore";
 import type {Quiz} from "#shared/types/quiz";
 
-const store = useQuizStore();
-store.deleteCurrentQuizId();
+const quizzes = ref<Quiz[]>([]);
 
-const { data: quizzes } = await useFetch<Quiz[]>(`/api/quizzes`);
+onMounted(async () => {
+  try {
+    quizzes.value = await $fetch<Quiz[]>("/api/quizzes");
+  } catch (e) {
+    navigateTo("/");
+  }
+});
 
 const navigateToQuiz = (id: string) => {
   navigateTo("/quizzes/" + id);
