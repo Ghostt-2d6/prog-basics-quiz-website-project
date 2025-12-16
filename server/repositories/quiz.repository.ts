@@ -1,6 +1,6 @@
 import { Quiz } from '~~/server/models/Quiz.model'
 import { connectMongo } from '~~/server/db/mongo'
-import type { QuizDto } from '~~/server/dto/QuizDto'
+import type {QuizDto} from "#shared/types/quiz";
 
 export const getAllQuizzes = async () => {
     await connectMongo()

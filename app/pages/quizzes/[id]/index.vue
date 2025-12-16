@@ -27,11 +27,11 @@
 </template>
 
 <script setup lang="ts">
-import type {Quiz} from "#shared/types/quiz";
+import type {QuizDto} from "#shared/types/quiz";
 
 const route = useRoute();
 
-const quiz = ref<Quiz | null>(null);
+const quiz = ref<QuizDto | null>(null);
 const answers = ref<Record<string, number>>({});
 
 if (typeof route.params.id !== "string") {
@@ -43,7 +43,7 @@ const quizId = route.params.id;
 
 onMounted(async () => {
   try {
-    quiz.value = await $fetch<Quiz>(`/api/quizzes/${quizId}`);
+    quiz.value = await $fetch<QuizDto>(`/api/quizzes/${quizId}`);
   } catch (error) {
     navigateTo("/quizzes");
   }

@@ -15,13 +15,13 @@
 </template>
 
 <script setup lang="ts">
-import type {Quiz} from "#shared/types/quiz";
+import type {QuizDto} from "#shared/types/quiz";
 
-const quizzes = ref<Quiz[]>([]);
+const quizzes = ref<QuizDto[]>([]);
 
 onMounted(async () => {
   try {
-    quizzes.value = await $fetch<Quiz[]>("/api/quizzes");
+    quizzes.value = await $fetch<QuizDto[]>("/api/quizzes");
   } catch (e) {
     navigateTo("/");
   }
