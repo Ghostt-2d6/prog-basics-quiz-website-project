@@ -6,7 +6,7 @@
     <p class="text-lg leading-relaxed">
       Це сайт для проходження тестів.
       Ми розробили його як навчальний проєкт, використовуючи сучасні технології
-      — Nuxt.js, Spring Boot та PostgreSQL.
+      — Nuxt.js, TypeScript та MongoDB.
     </p>
 
     <div class="flex flex-row flex-wrap gap-3">
