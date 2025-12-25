@@ -30,6 +30,7 @@ export default defineNuxtConfig({
     routeRules: {
         '/profile': { ssr: false },
         '/login': { ssr: false },
-        '/quizzes/*/results': { ssr: false }
+        '/quizzes/*/results': { ssr: false },
+        '/quizzes/create': { ssr: false }
     }
 })

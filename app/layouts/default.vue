@@ -3,9 +3,12 @@
     <Toolbar>
       <template #start>
         <div class="flex items-center gap-2">
-          <NuxtLink to="/"><p class="font-bold">Quizzes</p></NuxtLink>
+          <NuxtLink to="/"><span class="font-bold">Quizzes</span></NuxtLink>
           <NuxtLink to="/quizzes"><Button label="Тести" text plain /></NuxtLink>
           <NuxtLink to="/about"><Button label="Про сайт" text plain /></NuxtLink>
+          <template v-if="loggedIn">
+            <NuxtLink to="/quizzes/create"><Button label="Створити тест" text plain /></NuxtLink>
+          </template>
         </div>
       </template>
       <template #end>
